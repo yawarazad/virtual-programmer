@@ -15,34 +15,22 @@ app.get('/', function(req, res){
    res.render('index')
 });
 
-app.post("/echo", function(req, res) {
-  var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
-      : "Hello I am programming bot.";
-	var input = "write hello world program for me"
-	var input1 = speech.toString().trim();
+app.post("/webhook", function(req, res) {
+  	var speech =
+	    req.body.result &&
+	    req.body.result.parameters &&
+	    req.body.result.parameters.echoText
+	      ? req.body.result.parameters.echoText
+	      : "Some Error Has Occured";
 	
-	var output ="<p><s>"+ 
-				"#include <stdio.h></s>"+
-				"<s>int main()</s>"+
-				"<s>{</s>"+
-				   "<s>printf('Hello, World!');</s>"+
-				   "<s>return 0;</s>"+
-				"<s>}</s>"+
-				"</s></p>"
-	
-	if(input == input1) speech = output;
-	speech = speech + " | BBY";
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "Backend of the app"
-  });
-});
+	speech = speech + "From Backend";
 
+	return res.json({
+	    speech: speech,
+	    displayText: speech,
+	    source: "Backend of the app"
+	})
+})
 
 var port = process.env.PORT || 8000
 app.listen(port, function() {
