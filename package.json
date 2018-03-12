@@ -1,0 +1,14 @@
+{
+  "name": "virtual-programmer",
+  "version": "1.0.0",
+  "description": "This is my final year btech project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yawar Azad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
