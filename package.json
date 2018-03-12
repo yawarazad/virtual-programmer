@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This is my final year btech project",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts":{
+    "start": "node index.js"
   },
   "author": "Yawar Azad",
   "license": "ISC",
