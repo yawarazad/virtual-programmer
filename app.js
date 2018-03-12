@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 //app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res){
-   res.redirect('/public');
+   res.render('index')
 });
 
 app.post("/backend", function(req, res){
