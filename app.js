@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 //set static path
-app.use(express.static(path.join(__dirname, 'public')))
+//app.use(express.static(path.join(__dirname, 'public')))
 
 app.post("/backend", function(req, res){
 	var speech =
@@ -31,6 +31,7 @@ app.post("/backend", function(req, res){
 
 
 var port = process.env.PORT || 8000
+
 app.listen(port, function() {
 	console.log("Server Started on port "+port);
 })
