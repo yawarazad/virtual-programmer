@@ -16,19 +16,22 @@ app.get('/', function(req, res){
 });
 
 app.post("/webhook", function(req, res) {
-  	var speech =
-	    req.body.result &&
-	    req.body.result.parameters &&
-	    req.body.result.parameters.echoText
-	      ? req.body.result.parameters.echoText
-	      : "Some Error Has Occured";
-	
-	speech = speech + "From Backend";
+  	var speech = req.body.queryResult.queryText;
+  	console.log(JSON.stringify(req.body, 0, 2));
 
 	return res.json({
-	    speech: speech,
-	    displayText: speech,
-	    source: "Backend of the app"
+	    
+		  fulfillmentText: speech,
+		  source: "My Source"
+
+		  // fulfillmentMessages: [
+		  // 	{
+		  // 		image: {
+		  // 			imageUri: "https://avatars1.githubusercontent.com/u/17217118?s=460&v=4"
+		  // 		}
+		  // 	}
+		  // ]
+
 	})
 })
 
